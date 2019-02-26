@@ -3,8 +3,62 @@
 #include <time.h>
 //#include <cstdlib>
 //#include <ctime>
+#define FATHER( POS ) ( (POS - 1) / 2 )
+#define S_LEFT( POS ) ( POS * 2 + 1 )
+#define S_RITGH( POS ) ( POS * 2 + 2 )
+#define SIZE 100
 
 using namespace std;
+
+typedef struct {
+    int size;
+    int heap_item[SIZE];
+}tHeap;
+
+void build( int pos, int vec[], int size )
+{
+    int aux = vec[pos], temp = pos;
+
+    if ( S_LEFT( pos ) < size && aux < vec[S_LEFT( pos )] )
+    {
+        temp = S_LEFT( pos );
+        aux = vec[temp];
+    }
+
+    if ( S_RITGH( pos ) < size && aux < vec[S_RITGH( pos )] )
+    {
+        temp = S_RITGH( pos );
+        aux = vec[temp];
+    }
+
+    if ( pos != temp )
+    {
+        vec[temp] = vec[pos];
+        vec[pos] = aux;
+        build( temp, vec, size );
+    }
+}
+
+void buildHeap( int vec[], int size )
+{
+    for ( int i = (size - 2) / 2; i >= 0; --i ) 
+	{
+        build( i, vec, size );
+    }
+
+}
+
+void heapSort( int vec[], int size )
+{
+    int aux;
+    while ( size > 1 )
+    {
+        aux = vec[size - 1];
+        vec[size - 1] = vec[0];
+        vec[0] = aux;
+        build( 0, vec, --size );
+    }
+}
 
 void selectionSort(int *vector, int size) {
     int temp = vector[0], index;
@@ -176,3 +230,36 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
+/*
+int main()
+{
+    tHeap heap;
+    heap.size = 20;
+    int j = 0;
+    for ( int i = heap.size - 1; i >= 0; --i )
+    {
+        heap.heap_item[i] = rand() % 100;
+    }
+
+    for ( int i = 0; i < heap.size; ++i )
+    {
+        std::cout << heap.heap_item[i] << " ";
+    }
+    std::cout << std::endl;
+
+    buildHeap( heap.heap_item, heap.size );
+    for ( int i = 0; i < heap.size; ++i )
+    {
+        std::cout << heap.heap_item[i] << " ";
+    }
+    std::cout << std::endl;
+    heapSort( heap.heap_item, heap.size );
+
+    for ( int i = 0; i < heap.size; ++i )
+    {
+        std::cout << heap.heap_item[i] << " ";
+    }
+    std::cout << std::endl;
+}
+*/
