@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fernando/CLionProjects/GraphAlgorithms /dijkstra.cpp
+graph_adjacency_list.h
+/home/fernando/CLionProjects/GraphAlgorithms /graph_adjacency_list.h
+iostream
+-
+queue
+-
+vector
+-
+cstring
+-
+limits
+-
+
+/home/fernando/CLionProjects/GraphAlgorithms /graph_adjacency_list.h
+vector
+-
+iostream
+-
+
