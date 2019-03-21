@@ -8,7 +8,7 @@
 #include <vector>
 #include <cstring>
 #include <limits>
-#define SIZE 20
+#define SIZE 50
 
 int distance[SIZE], size, cost = 0;
 int infinity = std::numeric_limits< int >::max();
@@ -109,27 +109,9 @@ int prim( void )
 //    }
 //}
 
-void haha()
-{
-    freopen( "dij20.txt", "r", stdin );
-    clock_t t = clock();
-    int weight;
-    std::cin >> size;
-    graph = new GraphAdjacencyList( size );
-    for ( int i = 0; i < size - 1; ++i )
-    {
-        for ( int j = i + 1; j < size; ++j )
-        {
-            std::cin >> weight;
-            graph->addEdge( i, j, weight );
-            graph->addEdge( j, i, weight );
-        }
-    }
-}
-
 int main()
 {
-    freopen( "dij10.txt", "r", stdin );
+    freopen( "input/dij40.txt", "r", stdin );
     clock_t t = clock();
     int weight;
     std::cin >> size;
@@ -143,26 +125,7 @@ int main()
             graph->addEdge( j, i, weight );
         }
     }
-//    std::cin >> size;
-    //distance = new int[size];
-    //processed = new bool[size];
-//    graph = new GraphAdjacencyList( size );
-//    graph->addEdge( 1, 2, 3 );
-//    graph->addEdge( 2, 1, 3 );
-//    graph->addEdge( 1, 6, 1 );
-//    graph->addEdge( 6, 1, 1 );
-//    graph->addEdge( 2, 3, 4 );
-//    graph->addEdge( 3, 2, 4 );
-//    graph->addEdge( 2, 4, 7 );
-//    graph->addEdge( 4, 2, 7 );
-//    graph->addEdge( 3, 4, 1 );
-//    graph->addEdge( 4, 3, 1 );
-//    graph->addEdge( 4, 5, 8 );
-//    graph->addEdge( 5, 4, 8 );
-//    graph->addEdge( 6, 3, 9 );
-//    graph->addEdge( 3, 6, 9 );
-//    graph->addEdge( 6, 4, 4 );
-//    graph->addEdge( 4, 6, 4 );
+
     mst = new GraphAdjacencyList( size );
     prim();
     //createMst();

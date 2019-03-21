@@ -59,7 +59,7 @@ void union_( int v1, int v2 )
 
 int main()
 {
-    freopen( "dij10.txt", "r", stdin );
+    freopen( "input/dij40.txt", "r", stdin );
     clock_t t = clock();
     int size, weight;
     std::cin >> size;
@@ -76,7 +76,7 @@ int main()
         }
     }
 
-    graph.showGraph();
+    //graph.showGraph();
     int num_edges = graph.getNum_edges(), count = 0;
     t_edge edges[num_edges];
 
@@ -93,7 +93,7 @@ int main()
     insertionSort( edges, num_edges );
 
 
-    showEdges( edges, num_edges );
+    //showEdges( edges, num_edges );
     for ( int i = 0; i < num_edges; i++ )
     {
         if ( find( edges[i].v1 ) != find( edges[i].v2 ))
@@ -106,7 +106,7 @@ int main()
     mst.showGraph();
     clock_t t2 = clock();
     clock_t final = t2 - t;
-    std::cout << "Processing Time is " << final << std::endl;
+    //std::cout << "Processing Time is " << final << std::endl;
 
 
 

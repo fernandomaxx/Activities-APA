@@ -16,7 +16,6 @@ GraphAdjacencyMatrix::GraphAdjacencyMatrix( int size ) :
 
 GraphAdjacencyMatrix::~GraphAdjacencyMatrix( void )
 {
-    std::cout << "oi" << std::endl;
     for(int i = 0; i < size; ++i) {
         delete [] matrix[i];
     }
@@ -43,15 +42,15 @@ void GraphAdjacencyMatrix::showGraph( void )
         {
             if ( matrix[i][j] > 0)
             {
-                std::cout << i << j;
+                //std::cout << i << j;
                 sum_weight += matrix[i][j];
             }
-            else
-                std::cout << "  ";
+            //else
+                //std::cout << "  ";
         }
-        std::cout << std::endl;
+        //std::cout << std::endl;
     }
-    std::cout << "The SUM WEIGHT is: " << sum_weight << std::endl;
+    std::cout << sum_weight << std::endl;
 }
 
 int GraphAdjacencyMatrix::getNum_edges( void ) const
