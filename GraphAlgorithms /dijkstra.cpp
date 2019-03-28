@@ -53,7 +53,7 @@ int dijkstra( void )
         for ( int i = 0; i < graph->adj[actual].size(); ++i )
         {
 
-            if ( distance[graph->adj[actual][i].first] > graph->adj[actual][i].second + distance[actual] && !processed[graph->adj[actual][i].first] )
+            if ( distance[graph->adj[actual][i].first] > graph->adj[actual][i].second + distance[actual] )
             {
                 distance[graph->adj[actual][i].first] = graph->adj[actual][i].second + distance[actual];
                 pq.push( std::make_pair( distance[graph->adj[actual][i].first], &graph->adj[actual][i].first ) );
