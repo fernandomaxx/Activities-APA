@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/DynamicProgramming.dir/main.cpp.o  -o DynamicProgramming 
