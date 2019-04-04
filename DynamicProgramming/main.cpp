@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#define DEBUG 0
+#define DEBUG 1
 
 std::pair< int, int> greater( int a, int b )
 {
